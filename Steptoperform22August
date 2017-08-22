@@ -1,0 +1,22 @@
+Step 1: npm install --save babel-runtime
+Step 2: open .babelrc and replace hole file content with below content
+
+ 
+{
+  "presets": [
+  ["stage-2"],
+    ["es2015", {"modules": false}],
+    // webpack understands the native import syntax, and uses it for tree shaking
+
+    "react"
+    // Transpile React components to JavaScript
+  ],
+  "plugins": [
+    "react-hot-loader/babel","dynamic-import-webpack","transform-runtime"
+    // Enables React code to work with HMR.
+  ]
+}
+
+Step 3: npm run prod
+
+
